@@ -218,5 +218,5 @@ export const nav: NavItem[] = [
   { label: 'Events', href: '/#nights' },
   ...(voices.quotes.length ? [{ label: 'Reviews', href: '/#reviews' }] : []),
   ...(shopUrl ? [{ label: 'Shop', href: shopUrl, external: true }] : []),
-  { label: 'Contact', href: '#contact' },
+  { label: 'Book', href: '/#book' },
 ];

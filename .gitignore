@@ -10,3 +10,5 @@ next-env.d.ts
 scratch
 .vercel
 tsconfig.tsbuildinfo
+
+!.env.example

@@ -1,4 +1,4 @@
-import { brand, services } from '@/lib/site';
+import { services } from '@/lib/site';
 import Eyebrow from '@/components/ui/Eyebrow';
 import ServiceIcon from '@/components/ui/ServiceIcon';
 
@@ -42,7 +42,7 @@ export default function Services() {
           ))}
         </dl>
 
-        <a href={`mailto:${brand.email}`} className="text-link mt-8">
+        <a href="#book" className="text-link mt-8">
           {services.cta}
         </a>
       </div>

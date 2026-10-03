@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Nav from '@/components/sections/Nav';
 import Footer from '@/components/sections/Footer';
 import Eyebrow from '@/components/ui/Eyebrow';
-import { brand, story } from '@/lib/site';
+import { story } from '@/lib/site';
 import { createPageMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = createPageMetadata({
@@ -59,9 +59,9 @@ export default function AboutPage() {
               </p>
 
               <div className="mt-12 flex flex-wrap items-center gap-8">
-                <a href={`mailto:${brand.email}`} className="button-primary">
+                <Link href="/#book" className="button-primary">
                   Hire DJ TBLACK
-                </a>
+                </Link>
                 <Link href="/#story" className="text-link">
                   Back to home
                 </Link>

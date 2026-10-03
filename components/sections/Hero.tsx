@@ -76,7 +76,7 @@ export default function Hero() {
           className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-5 md:mt-12"
         >
           <a
-            href={`mailto:${brand.email}`}
+            href="#book"
             className="button-primary !min-h-14 !px-8 !text-[0.78rem] !font-extrabold !tracking-[0.16em]"
           >
             {hero.primaryCta}

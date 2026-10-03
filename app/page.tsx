@@ -5,6 +5,7 @@ import Services from '@/components/sections/Services';
 import Portfolio from '@/components/sections/Portfolio';
 import Testimonial from '@/components/sections/Testimonial';
 import Channels from '@/components/sections/Channels';
+import Booking from '@/components/sections/Booking';
 import Footer from '@/components/sections/Footer';
 
 export default function Page() {
@@ -18,6 +19,7 @@ export default function Page() {
         <Portfolio />
         <Testimonial />
         <Channels />
+        <Booking />
       </main>
       <Footer />
     </>

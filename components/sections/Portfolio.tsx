@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { brand, nights } from '@/lib/site';
+import { nights } from '@/lib/site';
 import Eyebrow from '@/components/ui/Eyebrow';
 
 export default function Portfolio() {
@@ -65,7 +65,7 @@ export default function Portfolio() {
                 <h3 className="display mt-6 text-[clamp(1.35rem,2.6vw,2rem)]">{night.title}</h3>
                 <p className="micro mt-4 text-ivory/60">{night.flow}</p>
                 <p className="body-copy mt-5 max-w-[44ch] text-pretty">{night.story}</p>
-                <a href={`mailto:${brand.email}`} className="text-link mt-7">
+                <a href="#book" className="text-link mt-7">
                   {nights.cta}
                 </a>
               </article>
