@@ -36,6 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </noscript>
       </head>
       <body>
+        <div id="top" aria-hidden="true" />
         <JsonLd />
         <a href="#main-content" className="skip-link">
           Skip to content

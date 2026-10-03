@@ -1,10 +1,15 @@
 'use client';
 
 import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export default function RevealController() {
+  // The layout persists across client navigation, so triggers are rebuilt for
+  // each page; otherwise newly rendered [data-reveal] content stays hidden.
+  const pathname = usePathname();
+
   useEffect(() => {
     const root = document.documentElement;
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -56,7 +61,7 @@ export default function RevealController() {
       context.revert();
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
-  }, []);
+  }, [pathname]);
 
   return null;
 }

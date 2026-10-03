@@ -3,18 +3,14 @@ export const brand = {
   role: 'Dubai-based DJ',
   base: 'Dubai, United Arab Emirates',
   origin: 'Lagos, Nigeria',
-  email: 'booking@djtblack.com',
-  phone: '+971 50 418 2276',
-  phoneHref: '+971504182276',
+  email: 'hello@djtblack.com',
+  phone: '+971 54 245 4249',
+  phoneHref: '+971542454249',
+  whatsappHref: 'https://wa.me/971542454249',
 };
 
-export const nav = [
-  { label: 'About Me', href: '#story' },
-  { label: 'Services', href: '#services' },
-  { label: 'Reviews', href: '#reviews' },
-  { label: 'Shop', href: '#shop' },
-  { label: 'Contact', href: '#contact' },
-];
+/** Set to the store URL to add "Shop" to the navigation. */
+export const shopUrl = '';
 
 export const hero = {
   kicker: 'From Lagos · Based in Dubai',
@@ -40,63 +36,56 @@ export const story = {
   readMoreCta: 'Read more about me',
   readMoreHref: '/about',
   closing: 'The floor is the brief.',
-  image: '/images/about-portrait.png',
+  image: '/images/about-portrait.webp',
   imageAlt: 'DJ TBLACK at the decks in a club, wearing headphones',
 };
 
 export const nights = {
-  eyebrow: 'Selected nights',
-  title: 'Proof lives on the floor.',
+  eyebrow: 'Events',
+  title: ['Built for', 'the room.'],
   intro:
-    'A selection of rooms with different expectations, different audiences and one shared outcome: nobody checking how long is left.',
+    'Different rooms, different briefs. The same goal every time: nobody checking how long is left.',
+  cta: 'Plan a night like this',
   items: [
     {
       image: '/images/work-01.jpg',
       number: '01',
-      title: 'The Garden Ceremony',
-      place: 'Emirates Hills',
-      year: '2025',
-      type: 'Luxury wedding',
-      audience: '320 guests · 11 nationalities',
+      title: 'The Wedding',
+      type: 'Weddings',
+      flow: 'Ceremony · Reception · Last dance',
       story:
-        'A restrained ceremony gave way to a reception moving from old soul into Afrobeats and a closing hour of amapiano.',
+        'Quiet music while guests find their seats. Then the songs both families know, then Afrobeats, then amapiano for the cousins who refuse to go home.',
       alt: 'Wedding table set with florals and candlelight',
     },
     {
-      image: '/images/work-05.jpg',
+      image: '/images/work-07.jpg',
       number: '02',
-      title: 'After the Headliner',
-      place: 'Al Marmoom',
-      year: '2025',
-      type: 'Festival closing set',
-      audience: '4,000 guests · open air',
+      title: 'Open Air',
+      type: 'Festivals',
+      flow: 'Warm-up · Peak time · Closing',
       story:
-        'A high-pressure closing slot built around percussion, call-and-response and a patient final release.',
-      alt: 'Festival main stage seen from within the crowd',
+        'Big stages need patience. Build the percussion, let the crowd find the hook, and hold the drop until the whole field is ready for it.',
+      alt: 'Confetti falling over a festival crowd under blue light',
     },
     {
       image: '/images/work-06.jpg',
       number: '03',
       title: 'The Brand Room',
-      place: 'DIFC',
-      year: '2024',
-      type: 'Global product launch',
-      audience: '480 guests · invitation only',
+      type: 'Corporate events',
+      flow: 'Arrival · Speeches · Dance floor',
       story:
-        'Elegant arrival music, exact speech cues and a dance floor that opened without changing the character of the brand.',
-      alt: 'Guests gathered at an evening brand launch',
+        'Music that sits under the conversation, cues timed to the run sheet, and a floor that opens the moment the programme ends.',
+      alt: 'Guests gathered in a grand hall for an evening event',
     },
     {
-      image: '/images/work-08.jpg',
+      image: '/images/work-03.jpg',
       number: '04',
-      title: 'Homecoming',
-      place: 'Victoria Island',
-      year: '2024',
-      type: 'Private celebration',
-      audience: '650 guests · Lagos',
+      title: 'Late Room',
+      type: 'Clubs',
+      flow: 'Residencies · Guest sets',
       story:
-        'A return to the music that started it: highlife memory, new Afrobeats and a room singing every word.',
-      alt: 'Hands raised through stage haze at a homecoming show',
+        'No saved set and no dead air. Reading the floor record by record until the room is fuller at two than it was at midnight.',
+      alt: 'Club room lit in red and blue with a disco ball',
     },
   ],
 };
@@ -154,7 +143,7 @@ export const channels = {
     {
       label: 'TikTok',
       handle: '@djtblack',
-      href: 'https://tiktok.com/@djtblack',
+      href: 'https://www.tiktok.com/',
       platform: 'tiktok' as const,
     },
     {
@@ -166,7 +155,7 @@ export const channels = {
     {
       label: 'Facebook',
       handle: '@djtblack',
-      href: 'https://facebook.com/djtblack',
+      href: 'https://www.facebook.com/',
       platform: 'facebook' as const,
     },
   ],
@@ -174,64 +163,60 @@ export const channels = {
     {
       label: 'SoundCloud',
       handle: 'DJ TBLACK',
-      href: 'https://soundcloud.com/djtblack',
+      href: 'https://soundcloud.com/',
       platform: 'soundcloud' as const,
     },
     {
       label: 'Spotify',
       handle: 'DJ TBLACK',
-      href: 'https://open.spotify.com/artist/djtblack',
+      href: 'https://open.spotify.com/',
       platform: 'spotify' as const,
     },
     {
       label: 'Mixcloud',
       handle: 'DJ TBLACK',
-      href: 'https://mixcloud.com/djtblack',
+      href: 'https://www.mixcloud.com/',
       platform: 'mixcloud' as const,
     },
     {
       label: 'YouTube',
       handle: 'DJ TBLACK',
-      href: 'https://youtube.com/@djtblack',
+      href: 'https://www.youtube.com/',
       platform: 'youtube' as const,
     },
     {
       label: 'Apple Music',
       handle: 'DJ TBLACK',
-      href: 'https://music.apple.com/artist/djtblack',
+      href: 'https://music.apple.com/',
       platform: 'apple-music' as const,
     },
   ],
 };
 
+export type Review = { quote: string; author: string; role: string };
+
+/**
+ * Real client reviews only. The Reviews section and its nav link stay hidden
+ * until at least one quote is added here.
+ */
 export const voices = {
   eyebrow: 'From the room',
   title: 'What remains after the last record.',
-  quotes: [
-    {
-      quote:
-        'We handed him four hundred guests from nine countries and a father of the bride who insisted he does not dance. By eleven, both were on the floor.',
-      author: 'Amira Haddad',
-      role: 'Private client · Emirates Hills',
-    },
-    {
-      quote:
-        'He understood that the brand mattered before the party—and exactly when the party was allowed to take over.',
-      author: 'Maya Richardson',
-      role: 'Regional events director · Dubai',
-    },
-    {
-      quote:
-        'No panic, no empty transitions, no ego. Just a room that kept getting better for six hours.',
-      author: 'Khalid Al Mansoori',
-      role: 'Private host · Abu Dhabi',
-    },
-  ],
-  image: '/images/client-portrait.jpg',
-  imageAlt: 'Portrait of a DJ TBLACK client',
+  quotes: [] as Review[],
   credentials: ['Dubai based', 'Worldwide travel', 'Planner friendly', 'Full technical rider'],
 };
 
 export const footer = {
   copyright: `© ${new Date().getFullYear()} DJ TBLACK`,
 };
+
+export type NavItem = { label: string; href: string; external?: boolean };
+
+export const nav: NavItem[] = [
+  { label: 'About Me', href: '/#story' },
+  { label: 'Services', href: '/#services' },
+  { label: 'Events', href: '/#nights' },
+  ...(voices.quotes.length ? [{ label: 'Reviews', href: '/#reviews' }] : []),
+  ...(shopUrl ? [{ label: 'Shop', href: shopUrl, external: true }] : []),
+  { label: 'Contact', href: '#contact' },
+];

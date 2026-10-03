@@ -17,7 +17,11 @@ export default function Footer() {
               <ul className="space-y-1">
                 {nav.map((item) => (
                   <li key={item.label}>
-                    <a className="text-sm text-ivory/60 hover:text-ivory" href={item.href}>
+                    <a
+                      className="text-sm text-ivory/60 hover:text-ivory"
+                      href={item.href}
+                      {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                    >
                       {item.label}
                     </a>
                   </li>
@@ -33,6 +37,14 @@ export default function Footer() {
                 </a>
                 <a className="block hover:text-ivory" href={`tel:${brand.phoneHref}`}>
                   {brand.phone}
+                </a>
+                <a
+                  className="block hover:text-ivory"
+                  href={brand.whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  WhatsApp
                 </a>
               </div>
               <nav aria-label="Social" className="mt-4 flex flex-wrap gap-2">

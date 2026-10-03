@@ -6,7 +6,7 @@ import { brand, hero } from '@/lib/site';
 
 export default function Hero() {
   return (
-    <section id="top" className="relative min-h-[100dvh] overflow-hidden bg-ink">
+    <section id="hero" className="relative min-h-[100dvh] overflow-hidden bg-ink">
       {/* A single cinematic plate, composed like the reference but built
           specifically around TBLACK's transparent portrait. */}
       <div aria-hidden="true" className="absolute inset-0">

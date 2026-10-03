@@ -251,6 +251,12 @@
   }
 }
 
+/* Keep anchored sections clear of the fixed header. */
+section[id],
+footer[id] {
+  scroll-margin-top: 5rem;
+}
+
 .skip-link {
   position: fixed;
   top: 1rem;

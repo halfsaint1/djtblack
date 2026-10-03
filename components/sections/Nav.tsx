@@ -61,6 +61,7 @@ export default function Nav() {
                 <li key={item.label}>
                   <a
                     href={item.href}
+                    {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                     className="py-3 text-[0.875rem] font-semibold uppercase tracking-[0.16em] text-ivory/70 transition-colors duration-200 hover:text-ivory"
                   >
                     {item.label}
@@ -127,6 +128,7 @@ export default function Nav() {
                     >
                       <a
                         href={item.href}
+                        {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                         onClick={() => setOpen(false)}
                         className="display flex items-baseline gap-5 py-5 text-[clamp(2.7rem,13vw,5.5rem)]"
                       >
@@ -141,6 +143,9 @@ export default function Nav() {
               <div className="mt-12 flex flex-col gap-2 text-sm text-ivory/60">
                 <a href={`mailto:${brand.email}`}>{brand.email}</a>
                 <a href={`tel:${brand.phoneHref}`}>{brand.phone}</a>
+                <a href={brand.whatsappHref} target="_blank" rel="noopener noreferrer">
+                  WhatsApp
+                </a>
                 <span className="micro mt-4">{brand.base}</span>
               </div>
             </div>

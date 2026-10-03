@@ -29,16 +29,20 @@ export default function SmoothScroll() {
     gsap.ticker.add(raf);
     gsap.ticker.lagSmoothing(0);
 
-    // In page anchors route through Lenis so the easing stays consistent.
+    // Same page anchors ("#id" or "/#id" while on "/") route through Lenis so
+    // the easing stays consistent. Links to other pages navigate normally.
     const onClick = (e: MouseEvent) => {
-      const anchor = (e.target as HTMLElement)?.closest?.('a[href^="#"]');
-      if (!anchor) return;
-      const href = anchor.getAttribute('href');
-      if (!href || href === '#') return;
-      const target = document.querySelector(href);
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey) return;
+      const anchor = (e.target as HTMLElement)?.closest?.('a[href]') as HTMLAnchorElement | null;
+      if (!anchor || anchor.target === '_blank') return;
+      const url = new URL(anchor.href, window.location.href);
+      if (url.origin !== window.location.origin || url.pathname !== window.location.pathname) return;
+      if (!url.hash || url.hash === '#') return;
+      const target = document.getElementById(decodeURIComponent(url.hash.slice(1)));
       if (!target) return;
       e.preventDefault();
-      lenis.scrollTo(target as HTMLElement, { offset: 0, duration: 1.4 });
+      // Lenis applies the target's scroll-margin-top (header offset) itself.
+      lenis.scrollTo(target, { duration: 1.4 });
     };
 
     document.addEventListener('click', onClick);

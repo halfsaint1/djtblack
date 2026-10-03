@@ -15,10 +15,10 @@ export const seo = {
   locale: 'en_AE',
 } as const;
 
-export const sameAs = [
-  ...channels.socials.map((item) => item.href),
-  ...channels.sound.map((item) => item.href),
-];
+// Only real profile URLs belong in sameAs; platform home pages are skipped.
+export const sameAs = [...channels.socials, ...channels.sound]
+  .map((item) => item.href)
+  .filter((href) => new URL(href).pathname.length > 1);
 
 export function absoluteUrl(path = '/') {
   return new URL(path, siteUrl).toString();
